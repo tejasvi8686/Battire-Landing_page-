@@ -1,3 +1,38 @@
+//navbar 
+
+export const itemleft = [
+  {
+    href: "/",
+    text: "Storie",
+  },
+  {
+    href: "/",
+    text: "Loev",
+  },
+  {
+    href: "/",
+    text: "One",
+  },
+
+];
+
+export const itemright = [
+  {
+    href: "/",
+    text: "Book Now",
+  },
+  {
+    href: "/",
+    text: "Book a test drive",
+  },
+  {
+    href: "/",
+    text: "Become Dealer",
+  },
+];
+
+
+
 // fotter 
 export const footerLinks = [
     {
