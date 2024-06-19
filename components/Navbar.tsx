@@ -3,7 +3,6 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo1 from "@/public/assets/logo.svg";
-import { Button } from "./ui/button";
 import Hamburg from "@/public/assets/hamburg.svg";
 import { itemleft, itemright } from "@/constants";
 
@@ -14,40 +13,39 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  
-
   return (
-    <nav className="bg-black opacity-80 fixed w-full z-20 top-0 start-0 sm:px-8 px-0 h-[60px]">
+    <nav className="bg-black opacity-80 fixed w-full z-20 top-0 start-0 sm:px-0 px-0 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <Link
             href="/"
             className="flex flex-row items-center space-x-2 rtl:space-x-reverse mr-5"
           >
-            <Image src={Logo1} alt=" Logo" height={21} width={76} />
+            <Image src={Logo1} alt=" Logo" height={30} width={86} />
           </Link>
-
-          <ul className="hidden md:flex space-x-8 rtl:space-x-reverse items-center">
-            {itemleft.map((item, index) => (
-              <li key={index}>
-                <Link
-                  className="text-white text-sm font-normal"
-                  href={item.href}
-                >
-                  {item.text}
-                </Link>
-              </li>
-            ))}
-            <Link className="text-white text-sm font-normal" href="/">
-              Superbike{"   "}
-              <sup className="bg-amber-400 text-black px-[4px] py-[1px] rounded-[1px]">
-                new
-              </sup>
-            </Link>
-          </ul>
+          <div className="md:hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
+            <ul className="hidden md:flex space-x-8 rtl:space-x-reverse items-center">
+              {itemleft.map((item, index) => (
+                <li key={index}>
+                  <Link
+                    className="text-white text-sm font-normal"
+                    href={item.href}
+                  >
+                    {item.text}
+                  </Link>
+                </li>
+              ))}
+              <Link className="text-white text-sm font-normal" href="/">
+                Superbike{"   "}
+                <sup className="bg-amber-400 text-black px-[4px] py-[1px] rounded-[1px]">
+                  new
+                </sup>
+              </Link>
+            </ul>
+          </div>
         </div>
 
-        <div className="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+        <div className="md:hidden lg:flex items-center space-x-4 rtl:space-x-reverse">
           <ul className="hidden md:flex space-x-8 rtl:space-x-reverse">
             {itemright.map((item, index) => (
               <li key={index}>
@@ -62,9 +60,7 @@ const Navbar: React.FC = () => {
           </ul>
         </div>
         <button
-          data-collapse-toggle="navbar-sticky"
-          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden   dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-sticky"
+          className="inline-flex items-center w-10 h-10 justify-center  lg:hidden "
           aria-expanded={isMenuOpen}
           onClick={toggleMenu}
         >
@@ -72,24 +68,28 @@ const Navbar: React.FC = () => {
         </button>
       </div>
       <div
-        className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}
+        className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`}
         id="navbar-sticky"
       >
-        <ul className="flex flex-col px-4 font-medium    rtl:space-x-reverse md:flex-row  ">
+        <ul className="flex flex-col px-4 py-4 font-medium lg:flex-row bg-slate-700 gap-2">
           {itemleft.map((item, index) => (
             <li key={index}>
-              <Link href={item.href}>{item.text}</Link>
+              <Link className="text-lg text-white" href={item.href}>
+                {item.text}
+              </Link>
             </li>
           ))}
-          <Link className="text-black" href="/">
+          <Link className="text-white text-lg" href="/">
             Superbike{"  "}
-            <sup className="bg-amber-400 text-black px-[4px] py-[1px] rounded-[1px]">
+            <sup className="bg-amber-400 text-white px-[4px] py-[1px] rounded-[1px]">
               new
             </sup>
           </Link>
           {itemright.map((item, index) => (
             <li key={index}>
-              <Link href={item.href}>{item.text}</Link>
+              <Link className="text-lg text-white" href={item.href}>
+                {item.text}
+              </Link>
             </li>
           ))}
         </ul>
