@@ -1,8 +1,13 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Map from "@/public/assets/map.svg";
 
-const Left = ({ scooterImage, selectedColor }) => {
+interface LeftProps {
+  scooterImage: StaticImageData;
+  selectedColor: string;
+}
+
+const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor }) => {
   return (
     <section className="bg-grey sm:w-[45%] w-full sm:pl-24 pl-5 sm:pr-16 pr-5 sm:pt-16 pt-11 sm:pb-20 pb-5">
       <div className="flex flex-row justify-between items-center ">

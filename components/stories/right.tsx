@@ -1,9 +1,27 @@
 'use client';
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React from "react";
 import Tick from "@/public/assets/tick.svg";
 import { Button } from "../ui/button";
 import Arrow from "@/public/assets/Arrow.svg";
+
+interface StepProps {
+  text: string;
+  className: string;
+  isLast: boolean;
+}
+
+interface ColorOptionProps {
+  color: string;
+  onSelect: (color: string) => void;
+  isActive: boolean;
+}
+
+interface RightProps {
+  onColorSelect: (color: string) => void;
+  selectedColor: string;
+  scooterImages: { [key: string]: StaticImageData };
+}
 
 const steps = [
   { text: "01 Select Model", className: "hidden sm:block" },
@@ -13,7 +31,7 @@ const steps = [
 
 const commonClassName = "text-xs font-semibold leading-4 uppercase";
 
-const Step = ({ text, className, isLast }) => (
+const Step: React.FC<StepProps> = ({ text, className, isLast }) => (
   <p className={`${commonClassName} ${className} ${isLast ? "sm:text-[#ABAB]" : ""}`}>
     {isLast ? (
       <span className="block sm:hidden">{text.slice(0, 25) + (text.length > 25 ? "..." : "")}</span>
@@ -22,7 +40,7 @@ const Step = ({ text, className, isLast }) => (
   </p>
 );
 
-const ColorOption = ({ color, onSelect, isActive }) => (
+const ColorOption: React.FC<ColorOptionProps> = ({ color, onSelect, isActive }) => (
   <div
     className={`h-7 w-7 rounded-full cursor-pointer ${isActive ? "border-[3px] border-black" : ""}`}
     style={{ backgroundColor: color }}
@@ -30,8 +48,9 @@ const ColorOption = ({ color, onSelect, isActive }) => (
   ></div>
 );
 
-const Right = ({ onColorSelect, selectedColor, scooterImages }) => {
-  const colors = Object.keys(scooterImages); 
+const Right: React.FC<RightProps> = ({ onColorSelect, selectedColor, scooterImages }) => {
+  const colors = Object.keys(scooterImages); // Get the colors from the scooterImages object
+
   return (
     <section className="bg-[#F4F4F4] sm:w-[55%] w-full sm:px-16 px-5 sm:pt-16 pt-14 sm:pb-8 pb-14">
       <div className="flex flex-col">
