@@ -29,16 +29,16 @@ const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor, selectedLocati
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="border-0 md:border-2 md:border-dashed mt-20 mx-16">
-        <motion.div
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{
-            delay: 0.2,
-            x: { type: "spring", stiffness: 60 },
-            opacity: { duration: 1 },
-            ease: "easeIn",
-            duration: 1,
-          }}
+        <motion.div  initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{
+              delay: 0.4,
+              x: { type: "spring", stiffness: 60 },
+              opacity: { duration: 0.6 },
+              ease: "easeIn",
+              duration: 1,
+            }}
+          
           className="p-2"
         >
           <Image src={scooterImage} width={374} height={263} alt="scooty" />
