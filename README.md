@@ -22,7 +22,7 @@ I've developed a modern and responsive landing page using Next.js and TypeScript
 
 ## ScreenShot of the Website:
 
-<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshots/1.png" width=100% height=100%/> <img src="https://github.com/tejasvi8686/Responsive-App-Landing-Page-Design/blob/main/screenshots/12.png" width=100% height=100%/>
+<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/1.png" width=100% height=100%/> 
 <img src="https://github.com/tejasvi8686/Responsive-App-Landing-Page-Design/blob/main/screenshots/13.png" width=100% height=100%/>
 <img src="https://github.com/tejasvi8686/Responsive-App-Landing-Page-Design/blob/main/screenshots/14.png" width=100% height=100%/>
 <img src="https://github.com/tejasvi8686/Responsive-App-Landing-Page-Design/blob/main/screenshots/15.png" width=100% height=100%/>
