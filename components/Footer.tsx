@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Logo1 from "@/public/assets/logo.svg";
-import Call from "@/public/assets/logo.svg";
-import Msg from "@/public/assets/logo.svg";
+import {links} from "@/constants/index"
 import { footerLinks } from "@/constants/index";
 import { Button } from "./ui/button";
 
+
+
 const Footer = () => {
   return (
-    <footer className="bg-black  sm:container">
-      <div className="mx-auto w-full max-w-screen-xl px-5 sm:px-8 py-6 lg:py-12">
+    <footer className="bg-black">
+      <div className="mx-auto sm:px-24 sm:py-16 px-6 py-9">
         <div className="flex sm:flex-row sm:gap-0 gap-5 flex-col items-center justify-between">
           <h1 className="sm:text-5xl text-2xl font-semibold text-white">
             Stay Informed <br />
@@ -29,7 +29,7 @@ const Footer = () => {
           </div>
         </div>
         <hr className="my-6 border-[#434343] sm:mx-auto  lg:my-8" />
-        <div className="grid grid-cols-2 md:grid-cols-5 sm:gap-4 sm:my-24 my-20 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-5 sm:gap-4 my-16 gap-4">
           <p className="text-white text-left text-sm font-normal">
             Kasra No 351, 80 Feet Road Vinayak City Guru Marg, Sirsi Road
             Neemera, Bindayaka, <br /> <br /> Jaipur, Rajasthan, 302041 <br />{" "}
@@ -53,28 +53,36 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
-              {/* {section.hasForm && (
-            
-              )} */}
             </div>
           ))}
         </div>
         <hr className="my-6 border-[#434343] sm:mx-auto  lg:my-8" />
-        <div className="flex sm:flex-row flex-col sm:items-center sm:justify-between sm:gap-0 gap-2">
-          <span className="text-sm text-center text-white">
+        <div className="flex sm:flex-row flex-col items-center justify-between sm:gap-0 gap-4">
+          <span className="text-sm text-center text-[#434343] font-normal">
             {" "}
-            Copyright 2024 uifry.com all rights reserved
+            © 2023 Batt:RE. All rights reserved
           </span>{" "}
-          <span className="text-sm text-white sm:text-center text-center">
-            Crafted with passion by{" "}
-            <Link
-              className="font-bold"
-              target="_blank"
-              href="https://tejasviraj.vercel.app/"
-            >
-              Tejasvi Raj
-            </Link>
-          </span>
+          <div className="flex flex-row">
+            <span className="text-sm text-center text-[#434343] font-normal">
+              PRIVACY POLICY
+            </span>
+            <span className="text-sm text-center text-[#434343] font-normal">
+              TERMS & CONDITIONS
+            </span>
+          </div>
+          <div className="flex flex-row gap-4 items-center">
+            {links.map((link, index) => (
+              <Link key={index} href={link.href} target="_blank">
+                <Image
+                  src={link.src}
+                  height={24}
+                  width={24}
+                  alt={link.alt}
+                  className="opacity-25"
+                />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
