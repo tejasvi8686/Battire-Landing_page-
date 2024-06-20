@@ -31,10 +31,10 @@ I've developed a modern and responsive landing page using Next.js and TypeScript
 ## ScreenShot of the Responsive Mode:
 
 
-![Landing Page With Next.j](<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/3.png" >) 
-<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/4.png" > 
-<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/5.png" > 
-<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/6.png"> 
+!(<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/3.png" >) 
+!<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/4.png" > 
+!<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/5.png" > 
+!<img src="https://github.com/tejasvi8686/Battire-Landing_page-/blob/main/screenshot/6.png"> 
 
 ---
 
