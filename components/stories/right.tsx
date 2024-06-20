@@ -1,7 +1,7 @@
+'use client';
 import Image from "next/image";
 import React from "react";
 import Tick from "@/public/assets/tick.svg";
-import Scooter from "@/public/assets/scooter(g) .svg";
 import { Button } from "../ui/button";
 import Arrow from "@/public/assets/Arrow.svg";
 
@@ -22,13 +22,16 @@ const Step = ({ text, className, isLast }) => (
   </p>
 );
 
-const ColorOption = ({ color }) => (
-  <div className="h-5 w-5 rounded-full" style={{ backgroundColor: color }}></div>
+const ColorOption = ({ color, onSelect, isActive }) => (
+  <div
+    className={`h-7 w-7 rounded-full cursor-pointer ${isActive ? "border-[3px] border-black" : ""}`}
+    style={{ backgroundColor: color }}
+    onClick={() => onSelect(color)}
+  ></div>
 );
 
-const Right = () => {
-  const colors = ["#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00", "#FF00FF", "#00FFFF", "#808080"];
-
+const Right = ({ onColorSelect, selectedColor, scooterImages }) => {
+  const colors = Object.keys(scooterImages); 
   return (
     <section className="bg-[#F4F4F4] sm:w-[55%] w-full sm:px-16 px-5 sm:pt-16 pt-14 sm:pb-8 pb-14">
       <div className="flex flex-col">
@@ -38,27 +41,32 @@ const Right = () => {
           ))}
         </div>
 
-        <h1 className="text-3xl font-semibold text-left">
+        <h1 className="text-3xl font-semibold text-left mb-8">
           Choose <br /> a colour
         </h1>
 
-        <div className="flex flex-col bg-white sm:p-10 p-8 mt-6 mb-10 ">
+        <div className="flex flex-col bg-white sm:p-10 p-8 mt-6 mb-20">
           <div className="flex flex-row items-center justify-between">
             <div className="flex flex-row sm:gap-4 gap-3 items-center ">
-              <Image src={Tick} height={25} width={23} alt="tick"  />
+              <Image src={Tick} height={25} width={23} alt="tick" />
               <div>
-                <h3 className="sm:text-lg text-base font-semibold">Stories</h3>
+                <h3 className="sm:text-2xl text-base font-semibold">Stories</h3>
                 <p className="text-sm font-normal">Sparkling Green</p>
               </div>
             </div>
             <div className="sm:w-32 w-24">
-              <Image src={Scooter} layout="responsive" width={130} height={99} alt="scooter" />
+              <Image src={scooterImages[selectedColor]} layout="responsive" width={130} height={99} alt="scooter" />
             </div>
           </div>
 
-          <div className="flex flex-row flex-wrap justify-between mt-10">
+          <div className="flex flex-row flex-wrap gap-4 mt-10">
             {colors.map((color, index) => (
-              <ColorOption key={index} color={color} />
+              <ColorOption
+                key={index}
+                color={color}
+                onSelect={onColorSelect}
+                isActive={color === selectedColor}
+              />
             ))}
           </div>
         </div>

@@ -1,22 +1,21 @@
 import Image from "next/image";
 import React from "react";
-import Scooter from "@/public/assets/scooter(g) .svg";
 import Map from "@/public/assets/map.svg";
 
-const left = () => {
+const Left = ({ scooterImage, selectedColor }) => {
   return (
     <section className="bg-grey sm:w-[45%] w-full sm:pl-24 pl-5 sm:pr-16 pr-5 sm:pt-16 pt-11 sm:pb-20 pb-5">
       <div className="flex flex-row justify-between items-center ">
         <h1 className="text-2xl font-semibold">Stories</h1>
         <div className="flex flex-row gap-2 items-center 2">
-          <div className="h-8 w-8 rounded-full bg-black"></div>
+          <div className="h-8 w-8 rounded-full" style={{ backgroundColor: selectedColor }}></div>
           <span className="font-normal text-sm">Sparkling Green</span>
         </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="border-0 md:border-2 md:border-dashed mt-20 mx-16">
         <div className="p-2">
-          <Image src={Scooter} width={374} height={263} alt="scooty" />
+          <Image src={scooterImage} width={374} height={263} alt="scooty" />
         </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
@@ -51,4 +50,4 @@ const left = () => {
   );
 };
 
-export default left;
+export default Left;
