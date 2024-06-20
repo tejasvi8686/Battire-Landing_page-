@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="bg-black opacity-80 fixed w-full z-20 top-0 start-0 sm:px-0 px-0 ">
+    <nav className="bg-[#313131]  fixed w-full z-5 top-0  px-0 ">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 ">
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <Link
@@ -71,10 +71,10 @@ const Navbar: React.FC = () => {
         className={`lg:hidden ${isMenuOpen ? "block" : "hidden"}`}
         id="navbar-sticky"
       >
-        <ul className="flex flex-col px-4 py-4 font-medium lg:flex-row bg-slate-700 gap-2">
+        <ul className="flex flex-col px-4 py-4  lg:flex-row bg-slate-700 h-[100vh]  gap-5">
           {itemleft.map((item, index) => (
             <li key={index}>
-              <Link className="text-lg text-white" href={item.href}>
+              <Link className="text-lg  text-white" href={item.href}>
                 {item.text}
               </Link>
             </li>
