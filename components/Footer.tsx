@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import {links} from "@/constants/index"
-import { footerLinks } from "@/constants/index";
+import { footerLinks, links } from "@/constants/index";
 import { Button } from "./ui/button";
 
 

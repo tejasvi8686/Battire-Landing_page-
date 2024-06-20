@@ -1,3 +1,10 @@
+import Ista from "@/public/assets/insta.svg";
+import fb from "@/public/assets/fb.png";
+import x from "@/public/assets/x.svg";
+import Li from "@/public/assets/link.svg";
+import yt from "@/public/assets/yt.svg";
+
+
 //navbar 
 
 export const itemleft = [
@@ -70,11 +77,7 @@ export const footerLinks = [
   },
 ];
 
-import Ista from "@/public/assets/insta.svg";
-import fb from "@/public/assets/fb.png";
-import x from "@/public/assets/x.svg";
-import Li from "@/public/assets/link.svg";
-import yt from "@/public/assets/yt.svg";
+
 
 export const links = [
   {
