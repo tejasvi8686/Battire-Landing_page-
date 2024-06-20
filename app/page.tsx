@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from "react";
 import Left from "@/components/stories/left";
 import Right from "@/components/stories/right";
@@ -11,13 +11,13 @@ interface ScooterImages {
 }
 
 export default function Home() {
-  const [selectedColor, setSelectedColor] = useState<string>("#a0cabb"); 
-  const [scooterImage, setScooterImage] = useState<StaticImageData>(ScooterGreen); 
+  const [selectedColor, setSelectedColor] = useState<string>("#a0cabb");
+  const [scooterImage, setScooterImage] = useState<StaticImageData>(ScooterGreen);
+  const [selectedLocation, setSelectedLocation] = useState<string>('New Delhi'); 
 
   const scooterImages: ScooterImages = {
     "#a0cabb": ScooterGreen,
     "#707485": ScooterWhite,
-    
   };
 
   const handleColorSelect = (color: string) => {
@@ -27,8 +27,17 @@ export default function Home() {
 
   return (
     <main className="mt-[56px] flex sm:flex-row flex-col">
-      <Left scooterImage={scooterImage} selectedColor={selectedColor} />
-      <Right onColorSelect={handleColorSelect} selectedColor={selectedColor} scooterImages={scooterImages} />
+      <Left 
+        scooterImage={scooterImage} 
+        selectedColor={selectedColor} 
+        selectedLocation={selectedLocation} 
+        onLocationSelect={setSelectedLocation} 
+      />
+      <Right 
+        onColorSelect={handleColorSelect} 
+        selectedColor={selectedColor} 
+        scooterImages={scooterImages} 
+      />
     </main>
   );
 }

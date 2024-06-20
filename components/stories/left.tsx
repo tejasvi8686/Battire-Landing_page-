@@ -1,15 +1,17 @@
-"use client";
+'use client';
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
-import Map from "@/public/assets/map.svg";
+import LocationDropdown from "@/components/Location";
 
 interface LeftProps {
   scooterImage: StaticImageData;
   selectedColor: string;
+  selectedLocation: string;
+  onLocationSelect: (location: string) => void;
 }
 
-const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor }) => {
+const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor, selectedLocation, onLocationSelect }) => {
   const colorName =
     selectedColor === "#a0cabb" ? "Sparkling Green" : "Sparkling Gray";
 
@@ -62,10 +64,10 @@ const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor }) => {
             </div>
 
             <div className="flex flex-row items-center gap-2">
-              <p className="sm:text-base text-[10px]">New Delhi</p>
-              <div className="border-dashed border-[1px] p-[2px]">
-                <Image src={Map} height={20} width={16} alt="map" />
-              </div>
+              <p className="sm:text-base text-[10px]">{selectedLocation}</p>
+           
+                <LocationDropdown onSelectLocation={onLocationSelect} />
+             
             </div>
           </div>
 
