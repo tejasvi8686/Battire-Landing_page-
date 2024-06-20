@@ -9,88 +9,71 @@ import { Button } from "./ui/button";
 
 const Footer = () => {
   return (
-    <footer className="bg-white dark:bg-gray-900 sm:container">
-      <div className="mx-auto w-full max-w-screen-xl px-8 sm:px-8 py-6 lg:py-8">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-          <div className="flex flex-col items-start">
-            <Link
-              href="/"
-              className="flex flex-row items-center space-x-2 rtl:space-x-reverse mb-4"
-            >
-              <Image src={Logo1} alt=" Logo" height={21} width={76} />
-        
-            </Link>
-            <div className="flex flex-row items-center gap-3 mb-4">
-              <Image
-                src={Call}
-                height={24}
-                width={24}
-                loading="lazy"
-                alt="call"
-              />
-              <Link
-                href="mailto:Help@Frybix.com"
-                className="font-medium text-base font-clash-display"
-              >
-                Help@Frybix.com
-              </Link>
-            </div>
-            <div className="flex flex-row items-center gap-3">
-              <Image
-                src={Msg}
-                height={24}
-                width={24}
-                loading="lazy"
-                alt="call"
-              />
-              <Link href="tel:+123445667889" className="font-medium text-base font-clash-display">
-                +1 234 456 678 89
-              </Link>
-            </div>
+    <footer className="bg-black  sm:container">
+      <div className="mx-auto w-full max-w-screen-xl px-5 sm:px-8 py-6 lg:py-12">
+        <div className="flex sm:flex-row sm:gap-0 gap-5 flex-col items-center justify-between">
+          <h1 className="sm:text-5xl text-2xl font-semibold text-white">
+            Stay Informed <br />
+            About Battre
+          </h1>
+
+          <div className=" flex flex-row  sm:items-center">
+            <input
+              type="email"
+              placeholder="Your email ID"
+              className="flex-grow p-5 bg-[#434343] text-white placeholder-gray-400 focus:outline-none"
+            />
+            <Button className=" p-8 px-8 text-sm bg-gray-200 text-black hover:bg-gray-300 transition duration-200 rounded-none">
+              SUBSCRIBE
+            </Button>
           </div>
+        </div>
+        <hr className="my-6 border-[#434343] sm:mx-auto  lg:my-8" />
+        <div className="grid grid-cols-2 md:grid-cols-5 sm:gap-4 sm:my-24 my-20 gap-4">
+          <p className="text-white text-left text-sm font-normal">
+            Kasra No 351, 80 Feet Road Vinayak City Guru Marg, Sirsi Road
+            Neemera, Bindayaka, <br /> <br /> Jaipur, Rajasthan, 302041 <br />{" "}
+            <br /> CIN: U29100RJ2017PTC059452
+          </p>
+
           {footerLinks.map((section, index) => (
             <div key={index} className="flex flex-col">
-              <h2 className="mb-4 text-lg font-semibold text-black uppercase font-clash-display dark:text-white leading-10">
+              <h2 className="mb-4 text-sm font-normal text-[#898989] sm:text-center">
                 {section.title}
               </h2>
               <ul className="flex flex-col gap-4">
                 {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
+                  <li key={linkIndex} className="sm:text-center text-sm">
                     <Link
                       href={link.href}
-                      className="hover:underline font-medium text-base text-black dark:text-white leading-7 font-clash-display"
+                      className="hover:underline font-normal text-sm text-white leading-7"
                     >
                       {link.text}
                     </Link>
                   </li>
                 ))}
               </ul>
-              {section.hasForm && (
-                <form className="mt-6 w-full">
-                  <label htmlFor="UserEmail" className="sr-only font-clash-display">
-                    Email
-                  </label>
-                  <div className="rounded-md border border-gray-100 p-2  sm:flex sm:items-center sm:gap-4">
-                    <input
-                      type="email"
-                      placeholder="Your Email"
-                      className="w-full sm:text-sm bg-transparent p-3 sm:p-1 font-clash-display"
-                    />
-                    <Button className="mt-1 w-full  bg-black hover:bg-gray-800 px-6 py-3 text-sm font-medium tracking-wide text-white transition-none sm:mt-0 sm:w-auto sm:shrink-0 dark:bg-[#FF5555] dark:hover:bg-[#be5555] rounded-md font-clash-display">
-                      Subscribe
-                    </Button>
-                  </div>
-                </form>
-              )}
+              {/* {section.hasForm && (
+            
+              )} */}
             </div>
           ))}
         </div>
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-[#434343] sm:mx-auto  lg:my-8" />
         <div className="flex sm:flex-row flex-col sm:items-center sm:justify-between sm:gap-0 gap-2">
-          <span className="text-sm text-center font-clash-display"> Copyright 2024 uifry.com all rights reserved</span>{" "}
-          <span className="text-sm text-black sm:text-center dark:text-white text-center font-clash-display">
-          Crafted with passion by {" "}
-            <Link className="font-bold" target="_blank" href="https://tejasviraj.vercel.app/">Tejasvi Raj</Link>
+          <span className="text-sm text-center text-white">
+            {" "}
+            Copyright 2024 uifry.com all rights reserved
+          </span>{" "}
+          <span className="text-sm text-white sm:text-center text-center">
+            Crafted with passion by{" "}
+            <Link
+              className="font-bold"
+              target="_blank"
+              href="https://tejasviraj.vercel.app/"
+            >
+              Tejasvi Raj
+            </Link>
           </span>
         </div>
       </div>

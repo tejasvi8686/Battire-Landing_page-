@@ -36,35 +36,36 @@ export const itemright = [
 // fotter 
 export const footerLinks = [
     {
-      title: "Links",
+      title: "Models",
       links: [
-        { href: "/", text: "Home" },
-        { href: "/", text: "About Us" },
-        { href: "/", text: "Bookings" },
-        { href: "/", text: "Blogs" },
+        { href: "/", text: "Storie" },
+        { href: "/", text: "One" },
+        { href: "/", text: "Loev" }
+
       ],
     },
     {
-      title: "Legal",
+      title: "Company",
       links: [
-        { href: "/", text: "Term of Use" },
-        { href: "/", text: "Privacy Policy" },
-        { href: "/", text: "Cookie Policy" },
+        { href: "/", text: "About" },
+        { href: "/", text: "Blog" }
+
       ],
     },
     {
-      title: "Product",
+      title: "Quick Link",
       links: [
-        { href: "/", text: "Take Tour" },
-        { href: "/", text: "Live Chat" },
-        { href: "/", text: "Reviews" },
+        { href: "/", text: "Become Dealer" },
+        { href: "/", text: "Locate a Dealer" },
+        { href: "/", text: "Emagine" },
       ],
     },
     {
-      title: "Newsletter",
+      title: "",
       links: [
-        { href: "/", text: "Stay Up To Date" },
+        { href: "/", text: "Book a test ride" },
+        { href: "/", text: "Book now" },
+        { href: "/", text: "Contact" },
       ],
-      hasForm: true,
     },
   ];

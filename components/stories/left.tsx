@@ -8,13 +8,15 @@ interface LeftProps {
 }
 
 const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor }) => {
+  const colorName = selectedColor === "#a0cabb" ? "Sparkling Green" : "Sparkling Gray";
+
   return (
     <section className="bg-grey sm:w-[45%] w-full sm:pl-24 pl-5 sm:pr-16 pr-5 sm:pt-16 pt-11 sm:pb-20 pb-5">
       <div className="flex flex-row justify-between items-center ">
         <h1 className="text-2xl font-semibold">Stories</h1>
         <div className="flex flex-row gap-2 items-center 2">
           <div className="h-8 w-8 rounded-full" style={{ backgroundColor: selectedColor }}></div>
-          <span className="font-normal text-sm">Sparkling Green</span>
+          <span className="font-normal text-sm">{colorName}</span>
         </div>
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />

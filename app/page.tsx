@@ -11,13 +11,13 @@ interface ScooterImages {
 }
 
 export default function Home() {
-  const [selectedColor, setSelectedColor] = useState<string>("#a0cabb"); // Initial selected color
-  const [scooterImage, setScooterImage] = useState<StaticImageData>(ScooterGreen); // Default scooter image based on the initial color
+  const [selectedColor, setSelectedColor] = useState<string>("#a0cabb"); 
+  const [scooterImage, setScooterImage] = useState<StaticImageData>(ScooterGreen); 
 
   const scooterImages: ScooterImages = {
     "#a0cabb": ScooterGreen,
     "#707485": ScooterWhite,
-    // Add more colors and corresponding scooter images as needed
+    
   };
 
   const handleColorSelect = (color: string) => {
