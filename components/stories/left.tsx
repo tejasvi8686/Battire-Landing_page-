@@ -1,4 +1,4 @@
-'use client';
+"use client";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 import React from "react";
@@ -11,12 +11,17 @@ interface LeftProps {
   onLocationSelect: (location: string) => void;
 }
 
-const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor, selectedLocation, onLocationSelect }) => {
+const Left: React.FC<LeftProps> = ({
+  scooterImage,
+  selectedColor,
+  selectedLocation,
+  onLocationSelect,
+}) => {
   const colorName =
     selectedColor === "#a0cabb" ? "Sparkling Green" : "Sparkling Gray";
 
   return (
-    <section className="bg-grey sm:w-[45%] w-full sm:pl-24 pl-5 sm:pr-16 pr-5 sm:pt-16 pt-11 sm:pb-20 pb-5">
+    <section className="bg-grey md:w-[45%] w-full sm:pl-16 pl-5 sm:pr-16 pr-5 sm:pt-16 pt-11 sm:pb-20 pb-5">
       <div className="flex flex-row justify-between items-center ">
         <h1 className="text-2xl font-semibold">Stories</h1>
         <div className="flex flex-row gap-2 items-center 2">
@@ -29,16 +34,16 @@ const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor, selectedLocati
       </div>
       <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
       <div className="border-0 md:border-2 md:border-dashed mt-20 mx-16">
-        <motion.div  initial={{ x: -100, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{
-              delay: 0.4,
-              x: { type: "spring", stiffness: 60 },
-              opacity: { duration: 0.6 },
-              ease: "easeIn",
-              duration: 1,
-            }}
-          
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{
+            delay: 0.4,
+            x: { type: "spring", stiffness: 60 },
+            opacity: { duration: 0.6 },
+            ease: "easeIn",
+            duration: 1,
+          }}
           className="p-2"
         >
           <Image src={scooterImage} width={374} height={263} alt="scooty" />
@@ -65,9 +70,8 @@ const Left: React.FC<LeftProps> = ({ scooterImage, selectedColor, selectedLocati
 
             <div className="flex flex-row items-center gap-2">
               <p className="sm:text-base text-[10px]">{selectedLocation}</p>
-           
-                <LocationDropdown onSelectLocation={onLocationSelect} />
-             
+
+              <LocationDropdown onSelectLocation={onLocationSelect} />
             </div>
           </div>
 

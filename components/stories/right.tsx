@@ -70,7 +70,7 @@ const Right: React.FC<RightProps> = ({
     selectedColor === "#a0cabb" ? "Sparkling Green" : "Sparkling Gray";
 
   return (
-    <section className="bg-[#F4F4F4] sm:w-[55%] w-full sm:px-16 px-5 sm:pt-16 pt-14 sm:pb-8 pb-14">
+    <section className="bg-[#F4F4F4] md:w-[55%] w-full sm:px-16 px-5 sm:pt-16 pt-14 sm:pb-8 pb-14">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between mb-8">
           {steps.map((step, index) => (

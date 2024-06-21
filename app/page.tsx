@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <main className="mt-[56px] flex sm:flex-row flex-col">
+    <main className="mt-[56px] flex flex-col sm:flex-col md:flex-row">
       <Left 
         scooterImage={scooterImage} 
         selectedColor={selectedColor} 
